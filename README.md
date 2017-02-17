@@ -18,14 +18,14 @@ http://v4-alpha.getbootstrap.com/getting-started/introduction/#quick-start
 
 メインCSS
 
-```
+```html
 `<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">`
 ```
 
 
 スクリプト関連
 
-```
+```html
 `<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>`
@@ -37,7 +37,7 @@ http://v4-alpha.getbootstrap.com/getting-started/introduction/#quick-start
 
 http://v4-alpha.getbootstrap.com/getting-started/introduction/#starter-template
 
-```
+```html
 <!DOCTYPE html>
 <html lang="**ja**">
   <head>
@@ -68,7 +68,7 @@ http://v4-alpha.getbootstrap.com/getting-started/introduction/#starter-template
 
 以下のファイルをコピーしてください。
 
-```
+```bash
 講師用フォルダ\Bootstrap4\gulp\dev.zip
 ```
 
@@ -108,7 +108,7 @@ http://v4-alpha.getbootstrap.com/getting-started/introduction/#starter-template
 
 scss/_variables.scss
 
-```
+```scss
 // テーマカラーの設定
 $color-primary  : #8a3f20;
 $color-secondary: #44bf5b;
@@ -152,7 +152,7 @@ Bootstrap4 より**Flexbox**によるレイアウト方法が採用されてい�
 
 使用例
 
-```
+```html
 <div class="container">
   <div class="row">
     <div class="col-md-8">8カラム .rowを使うと.containerにフィットします。
@@ -191,7 +191,7 @@ http://the-echoplex.net/flexyboxes/
 {breakpoint}, {colspan} の部分は上記カラムとブレークポイントの表を参照。
 CSS の margin プロパティにより間隔ができる。
 
-```
+```html
 <div class="container container-demo">
   <div class="row">
     <div class="col-md-6 col-demo">6カラム</div>
@@ -215,8 +215,8 @@ https://v4-alpha.getbootstrap.com/components/navbar/#supported-content
 
 index.html
 
-```
-**<header class="site-header">**
+```html
+<header class="site-header">
   <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
   <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -246,7 +246,7 @@ index.html
 
 index.html
 
-```
+```html
 <nav class="navbar navbar-toggleable-md **navbar-header**">
 ...略...
 ```
@@ -260,14 +260,14 @@ index.html
 index.html
 `<head>` 内
 
-```
+```html
 <link rel="stylesheet" href="./assets/css/style.css">
 ```
 
 
 scss/style.scss
 
-```
+```scss
 .navbar-header {
   background: $color-primary;
 }
@@ -277,7 +277,7 @@ scss/style.scss
 
 **ナビゲーションの位置調整**
 
-```
+```html
 <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav **ml-auto**">
 ```
@@ -304,7 +304,7 @@ https://v4-alpha.getbootstrap.com/utilities/spacing/
 
 index.html
 
-```
+```html
 <h1 class="site-logo">
     <a class="navbar-brand" href="#"><img src="./assets/img/logo.svg" alt="ウィズダムペットクリニック"></a>
 </h1>
@@ -312,7 +312,7 @@ index.html
 
 scss/style.scss
 
-```
+```scss
 .site-logo {
   margin: 0;
 
@@ -326,7 +326,7 @@ scss/style.scss
 **ナビゲーションのリンク色調整**
 scss/style.scss
 
-```
+```scss
 .navbar-header{
    .nav-link {
      color: #fff;
@@ -344,7 +344,7 @@ CDNからIoniconsの導入する。
 index.html
 `<head>` 内
 
-```
+```html
 <!-- ionicons -->
 <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 
@@ -356,7 +356,7 @@ index.html
 
 index.html
 
-```
+```html
 <span class="navbar-toggler-icon"><i class="ion-navicon"></i></span>
 ```
 
@@ -364,7 +364,7 @@ index.html
 
 dev/scss/style.scss
 
-```
+```scss
  .navbar-toggler {
    border-color: #fff;
    background-color: rgba(white, .2);
@@ -400,7 +400,7 @@ http://bxslider.com/
 index.html
 `<head>` 内にCSS
 
-```
+```html
 <!-- bxslider -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.6/jquery.bxslider.css">
 ```
@@ -426,7 +426,7 @@ index.html
 
 index.html
 
-```
+```html
 <div class=" sect-hero" id="sect-hero">
   <ul class="bxslider">
     <li>
@@ -457,7 +457,7 @@ index.html
 
 assets/js/script.js
 
-```
+```js
 $('.bxslider').bxSlider({
   adaptiveHeight: true,
   mode: 'fade',
@@ -479,7 +479,7 @@ http://bxslider.com/options
 
 scss/style.scss
 
-```
+```scss
 .sect-hero {
   .bx-wrapper {
     margin-bottom: 0;
@@ -519,7 +519,7 @@ index.html
 </main>
 ```
 
-```
+```html
 <main class="site-main">
     <div class="sect-mission sect-common">
         <section>
@@ -713,7 +713,7 @@ dev/scss/style.scss
 
 index.html
 
-```
+```html
 <div class="sect-staff sect-common" id="sect-staff">
   <section>
     <div class="container">
