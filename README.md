@@ -682,7 +682,7 @@ index.html
 
 dev/scss/style.scss
 
-```
+```scss
 .service-icon {
   width: 80px;
   margin-bottom: 1rem;
@@ -766,7 +766,7 @@ index.html
 
 index.html
 
-```
+```html
 <div class="col-lg-4 staff">
   <div class="row">
     <div class="col-sm-4 col-lg-12">
@@ -799,7 +799,7 @@ index.html
 
 index.html
 
-```
+```scss
 .sect-staff {
   background: linear-gradient(to bottom, #e4d29d, darken(#e4d29d, 10%));
 }
@@ -810,7 +810,7 @@ index.html
 
 dev/scss/style.scss
 
-```
+```scss
 .staff {
   margin-bottom: 2rem;
 
