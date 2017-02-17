@@ -1,11 +1,11 @@
 # Bootstrap4 - ペットクリニック【簡易版】
 
 Advanced版はこちらをご覧ください
-[Bootstrap4 - ペットクリニック](https://quip.com/AimHAQoH8OY6) 
+[Bootstrap4 - ペットクリニック](https://quip.com/AimHAQoH8OY6)
 
 
 テキストファイル
-[Bootstrap 4 - ペットクリニック用テキスト](https://quip.com/NaPZAaZD860I) 
+[Bootstrap 4 - ペットクリニック用テキスト](https://quip.com/NaPZAaZD860I)
 * * *
 
 ## Bootstrapの準備
@@ -19,14 +19,14 @@ http://v4-alpha.getbootstrap.com/getting-started/introduction/#quick-start
 メインCSS
 
 ```html
-`<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">`
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">`
 ```
 
 
 スクリプト関連
 
 ```html
-`<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>`
 ```
@@ -85,7 +85,7 @@ http://v4-alpha.getbootstrap.com/getting-started/introduction/#starter-template
 
 ## Browser-sync(ブラウザ自動更新)の準備(オプショナル)
 
-[ブラウザの自動リロードを行うBrowser-sync - グローバルインストール編](https://quip.com/dozzAwswTXNr) 
+[ブラウザの自動リロードを行うBrowser-sync - グローバルインストール編](https://quip.com/dozzAwswTXNr)
 
 **ポイント**
 
@@ -96,15 +96,15 @@ http://v4-alpha.getbootstrap.com/getting-started/introduction/#starter-template
 
 ## **Sass環境**
 
-/project				
-	/dev	開発用フォルダ		
-		/scss		
+/project
+	/dev	開発用フォルダ
+		/scss
 			style.scss	Sassメインファイル
 			_variables.scss	変数用パーツファイル
-	/assets	本番用フォルダ		
-		/css	CSSフォルダ	
-		/img	画像用フォルダ	
-		/js	JSフォルダ	
+	/assets	本番用フォルダ
+		/css	CSSフォルダ
+		/img	画像用フォルダ
+		/js	JSフォルダ
 
 scss/_variables.scss
 
@@ -417,7 +417,7 @@ index.html
 
 <!-- bxslider -->
 <script src="https://cdn.jsdelivr.net/bxslider/4.2.6/jquery.bxslider.min.js"></script>
-    
+
 <script src="./assets/js/script.js"></script>
 ```
 
@@ -525,7 +525,7 @@ index.html
         <section>
           <div class="container">
             <h2 class="sect-head text-center">私たちのミッション</h2>
-    
+
             <div class="row">
               <p class="col-md-5 offset-md-1">このたびは、私どものホームページーズにお応えすべく...</p>
               <p class="col-md-5">理想を実現するために、私たちはホスピタリティの向上に日々努めています。...</p>
@@ -571,7 +571,7 @@ scss/style.css
 * 角度のオプション: to left(開始位置: 右) | to right(開始位置: 左) | to bottom(開始位置: 上) | to top(開始位置: 下) | *deg(角度指定)
 
 
-`linear-gradient()` デモ: 
+`linear-gradient()` デモ:
 http://codepen.io/ipgotanda/pen/jyJoaZ?editors=1100
 
 `lighten()` 関数
@@ -583,7 +583,7 @@ https://mbdb.jp/web/sass-color-generator.html
 ## Bootstrap 4 のブレークポイントに合わせたメディアクエリ例
 
 ```
-@media only screen and (min-width: 576px) { 
+@media only screen and (min-width: 576px) {
     // smサイズ 576px~
 }
 @media only screen and (min-width: 768px) {
@@ -592,7 +592,7 @@ https://mbdb.jp/web/sass-color-generator.html
 @media only screen and (min-width: 992px) {
     // lgサイズ 992px~
  }
-@media only screen and (min-width: 1200px) { 
+@media only screen and (min-width: 1200px) {
     // xlサイズ 1200px~
 }
 ```
@@ -620,10 +620,10 @@ index.html
         <h2 class="sect-head text-center">サービス</h2>
         <div class="row">
           <div class="col-sm-6 col-md-4 service">
-          
+
           </div>
           <div class="col-sm-6 col-md-4 service">
-            
+
           </div>
           <div class="col-sm-6 col-md-4 service">
 
@@ -632,10 +632,10 @@ index.html
 
           </div>
           <div class="col-sm-6 col-md-4 service">
-          
+
           </div>
           <div class="col-sm-6 col-md-4 service">
-          
+
           </div>
         </div>
       </div>
@@ -730,11 +730,11 @@ index.html
             </div>
           </div><!-- /.row -->
         </div><!-- /.staff -->
-        
+
         <div class="col-lg-4 staff">
           <div class="row">
             <div class="col-sm-4 col-lg-12">
-             
+
             </div>
             <div class="col-sm-8 col-lg-12">
 
