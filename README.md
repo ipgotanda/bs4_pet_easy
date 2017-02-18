@@ -12,6 +12,8 @@ Advanced版はこちらをご覧ください
 
 ### Boostrap 4 のQuick Start を使用する場合
 
+
+
 CDNを利用する。
 http://v4-alpha.getbootstrap.com/getting-started/introduction/#quick-start
 
@@ -355,7 +357,7 @@ index.html
 ```
 
 
-アイコンの追加
+**アイコンの追加**
 
 index.html
 
@@ -814,6 +816,7 @@ index.html
 dev/scss/style.scss
 
 ```scss
+
 .staff {
   margin-bottom: 2rem;
 
