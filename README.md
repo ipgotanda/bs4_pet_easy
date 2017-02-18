@@ -135,12 +135,15 @@ Bootstrap でのカラムレイアウトでは**Grid system (グリッドシス�
 
 
 **カラム用のコンテナ**
-`**.row**`
+
+
+`.row`
 `.container`と共に使用した際に、`.container`の内側余白をネガティブマージンで打ち消している。
 つまりカラムが`.container`の幅に収まるようになる。
 
 
 **カラム**
+
 **`.col-{breakpoint}-{colspan}`**
 Bootstrap4 より**Flexbox**によるレイアウト方法が採用されている。
 
@@ -168,7 +171,7 @@ Bootstrap4 より**Flexbox**によるレイアウト方法が採用されてい�
 カラム数は 8+4=12 となり.container にきれいに収まる。
 
 
-### **Bootstrapのカラムとブレークポイントを理解する**
+### Bootstrapのカラムとブレークポイントを理解する
 
 A	Extra Small	Small	Medium	Large	Extra Large
 ブレークポイントキーワード	xs	sm	md	lg	xl
