@@ -52,27 +52,23 @@ body { background: #eee; font-family: helvetica, arial, 'hiragino kaku gothic pr
 
 @media (max-width: 575px) { .staff-intro { padding: 0 1rem; } }
 
-.sect-voice .row [class^=col-] { border: 2px solid yellow; }
-
-.sect-voice .row [class^=col-] [class^=col-] { border: 1px solid black; background-color: skyblue; }
-
 .voice { margin-bottom: 0; min-height: 350px; position: relative; background-size: cover; background-position: center center; }
 
-.voice-quote { color: #fff; position: absolute; bottom: 0; left: 0; width: 90%; background-color: rgba(0, 0, 0, 0.6); border-radius: 0 1rem 0 0; padding: 1rem; }
+.voice-quote { color: #fff; position: absolute; bottom: 0; left: 0; background-color: rgba(0, 0, 0, 0.6); border-radius: 0 1rem 0 0; padding: 1rem; }
 
-.voice-quote p { margin-bottom: 0; line-height: 1.5; min-height: 4.5rem; max-height: 4.5rem; transition: max-height .4s; overflow: hidden; position: relative; }
+.voice-quote p { margin-bottom: 0; line-height: 1.5; min-height: 4.5rem; max-height: 4.5rem; max-width: 25em; transition: max-height .4s; overflow: hidden; }
 
-.voice-quote:hover p { max-height: 20em; }
+.voice-quote p .lead { font-size: 1rem; }
+
+.voice-quote p .more { opacity: 0; transition: opacity .4s; }
+
+.voice-quote:hover p { max-height: 15em; }
 
 .voice-quote:hover p .more { opacity: 1; }
 
 .voice-quote:after { display: block; position: absolute; left: 0; bottom: 0; width: 100%; content: ''; height: 4rem; background-image: linear-gradient(to top, rgba(0, 0, 0, 0.75), transparent); }
 
 .voice-quote:hover:after { background-image: none; }
-
-.lead { font-size: 1rem; }
-
-.more { opacity: 0; transition: opacity .4s; }
 
 .voice-01 { background-image: url(../img/testimonial_01.jpg); }
 

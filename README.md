@@ -848,8 +848,185 @@ dev/scss/style.scss
 
 ## セクションの作成「飼い主様の声」
 
+![飼い主様の声](http://i.imgur.com/6qSiiXB.png)
 
-coming soon...
+
+
+まずはレイアウト
+
+index.html
+
+```html
+<div class="sect-voice" id="sect-voice">
+    <section>
+      <div class="container-fluid">
+        <div class="row">
+          <blockquote class="col-sm-6 voice voice-01"></blockquote>
+          <blockquote class="col-sm-6 voice voice-02"></blockquote>
+          <blockquote class="col-sm-6 voice voice-03"></blockquote>
+          <blockquote class="col-sm-6 voice voice-04"></blockquote>
+        </div>
+      </div>
+    </section>
+</div><!-- /.sect-voice -->
+```
+
+* お客様の声なので引用を表す `blockquote` でマークアップする
+
+詳細
+
+```html
+<div class="voice-quote">
+  <p>
+    <span class="lead">今までどこの動物病院でも「うさぎは難しいから・・・」... </span>
+    <span class="more">
+      ちゃんと診察できる動物に「うさぎ」って書いてあるだけのことはあります！...
+    </span>
+  </p>
+</div>
+```
+
+* `.voice-quote` はレイアウト用。`p` 内の `span.lead` は抜粋部分
+* `span.more` はマウスオーバー時に表示される部分
+
+
+
+### お客様の声ブロックのレイアウト・装飾
+
+dev/scss/style.scss
+
+```scss
+.voice {
+  margin-bottom: 0;
+  min-height: 350px;
+  position: relative;
+}
+```
+
+```
+.voice-quote {
+  color: #fff;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(black,.6);
+  border-radius: 0 1rem 0 0;
+  padding: 1rem;
+}
+```
+
+
+
+### 引用部分レイアウト・装飾
+
+```scss
+.voice-quote {
+
+  ...略...
+
+  p {
+    margin-bottom: 0;
+    line-height: 1.5;
+    min-height: 4.5rem;
+    max-height: 4.5rem;
+    max-width: 25em; // 1行の最大文字数
+    transition: max-height .4s;
+    overflow: hidden;
+
+    .lead {
+      font-size: 1rem; // bootstrapオーバーライド
+    }
+    .more {
+      opacity: 0;
+      transition: opacity .4s;
+    }
+
+  } //p
+
+  // マウスオーバー時
+  &:hover {
+    p {
+      max-height: 15em;
+
+      .more {
+        opacity: 1;
+      }
+    }
+  }
+
+  ...略...
+
+} //.voice-quote
+```
+
+* マウスOFF時
+    * `.lead` 部分は3行の高さまで見せる
+    * `.more` は `opacity: 0` で隠しておく
+* マウスON時
+    * `p` を高さ最大 `15em` までとする。
+    * マウスオーバー時に `.more` の部分を見せる
+
+### 引用下部にフェード効果をつける
+
+コメントが続いているニュアンスを出すためのちょっとしたデザイン要素。
+
+dev/scss/style.scss
+
+```scss
+.voice-quote {
+
+    ...略...
+
+    &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 4rem;
+        background-image: linear-gradient(to top,rgba(black,.75), transparent);
+    }
+
+    &:hover:after {
+        background-image: none;
+    }
+
+} //.voice-quote
+```
+
+
+
+### 背景画像指定
+
+dev/scss/style.scss
+
+
+```scss
+.voice {
+
+ ...略...
+
+  // 背景画像サイズ
+  background-size: cover;
+  background-position: center center;
+}
+
+.voice-01 {
+    background-image: url(../img/testimonial_01.jpg);
+}
+.voice-02 {
+    background-image: url(../img/testimonial_02.jpg);
+}
+.voice-03 {
+    background-image: url(../img/testimonial_03.jpg);
+}
+.voice-04 {
+    background-image: url(../img/testimonial_04.jpg);
+}
+```
+
+
 
 * * *
 
