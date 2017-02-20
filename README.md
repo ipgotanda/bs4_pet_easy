@@ -1058,6 +1058,8 @@ index.html
 
 * `. justify-content-end` はBootstrap のレイアウトレスポンシブユティリティクラス
     [https://v4-alpha.getbootstrap.com/layout/grid/#horizontal-alignmen](https://v4-alpha.getbootstrap.com/layout/grid/#horizontal-alignment)
+* ナビゲーションは Bootstrap のナビゲーションコンポーネント
+[https://v4-alpha.getbootstrap.com/components/navs/#base-nav](https://v4-alpha.getbootstrap.com/components/navs/#base-nav)
 
 ### スタイル
 

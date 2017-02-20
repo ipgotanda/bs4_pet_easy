@@ -1,4 +1,4 @@
-body { background: #eee; font-family: helvetica, arial, 'hiragino kaku gothic pro', meiryo, 'ms pgothic', sans-serif; }
+body { background: #eee; font-family: helvetica, arial, 'hiragino kaku gothic pro', meiryo, 'ms pgothic', sans-serif; position: relative; }
 
 .navbar-header { background: #8a3f20; }
 
