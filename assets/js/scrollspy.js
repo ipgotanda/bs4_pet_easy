@@ -23,3 +23,5 @@
  $(window).on('activate.bs.scrollspy', function(){
    navToggler();
  });
+
+ 

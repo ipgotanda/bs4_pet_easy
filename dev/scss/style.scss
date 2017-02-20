@@ -23,21 +23,34 @@ body {
 .navbar-header {
   background: rgba($color-primary, .8);
 
-  max-height: 120px; //transition用
-  transition: max-height 1s;
+  @media (min-width: 992px) {
+    max-height: 120px; //transition用
+    transition: max-height 1s;
 
-  // HERO以外にスクロールした時
-  .is-scrolled & {
-    max-height: 60px;
+    // HERO以外にスクロールした時
+    .is-scrolled & {
+      max-height: 60px;
+    }
   }
+
 }
 
 .site-logo {
   margin: 0;
+  font-size: 1rem;
 
   img {
     max-height: 60px;
-    // transition: max-height 1s;
+    transition: max-height 1s;
+  }
+
+  // HERO以外にスクロールした時
+  @media (min-width: 768px) {
+    .is-scrolled & {
+      img {
+        max-height: 40px;
+      }
+    }
   }
 
   @media (max-width: 767px) {
@@ -46,19 +59,11 @@ body {
     }
   }
 
-  // HERO以外にスクロールした時
-  .is-scrolled & {
-    img {
-      // max-height: 40px;
-    }
-  }
-
 }
 
 
 // ナビゲーション
 .navbar-header{
-
    .nav-link {
      color: #fff;
 

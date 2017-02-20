@@ -1264,7 +1264,7 @@ dev/scss/style.scss
 }
 ```
 
-### Scrollspy用のJSを設定する
+###  Scrollspy用のJSを設定する
 
 assets/js/scrollspy.js
 ```js
@@ -1287,3 +1287,37 @@ assets/js/scrollspy.js
  });
 ```
 結果を確認する。
+
+---
+
+## スムーススクロールを実装する
+
+スクリプトは以下を参考にする。
+http://goo.gl/WhTHd5
+
+同じページのページ内リンクに反応する、「#」だけのリンクは除外する等の細かい処理が施されています。
+
+assets/js/script.js
+```js
+var topoffset = 60;
+
+//Use smooth scrolling when clicking on navigation
+$('.navbar a[href*=\\#]:not([href=\\#])').click(function() {
+  if (location.pathname.replace(/^\//,'') ===
+    this.pathname.replace(/^\//,'') &&
+    location.hostname === this.hostname) {
+    var target = $(this.hash);
+    target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+    if (target.length) {
+      $('html,body').animate({
+        scrollTop: target.offset().top-topoffset+2
+      }, 500);
+      return false;
+    } //target.length
+  } //click function
+}); //smooth scrolling
+```
+* オリジナルのJSから少し手直しを加えてあるので上記をコピーすること
+* var topoffset = 60 は ヘッダーの高さ
+
+
