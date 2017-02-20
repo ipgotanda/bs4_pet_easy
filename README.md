@@ -1,5 +1,33 @@
 # Bootstrap4 - ペットクリニック【簡易版】
 
+<!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
+
+- [Bootstrap4 - ペットクリニック【簡易版】](#bootstrap4-簡易版)
+	- [Bootstrapの準備](#bootstrap準備)
+		- [Boostrap 4 のQuick Start を使用する場合](#boostrap-4-quick-start-使用場合)
+		- [Starter Templateを使用する場合](#starter-template使用場合)
+	- [gulpによるSass構築環境設定](#gulpsass構築環境設定)
+	- [Browser-sync(ブラウザ自動更新)の準備(オプショナル)](#browser-sync自動更新準備)
+	- [**Sass環境**](#sass環境)
+	- [Bootstrapの基本レイアウト - グリッドレイアウト](#bootstrap基本-)
+		- [Bootstrapのカラムとブレークポイントを理解する](#bootstrap理解)
+	- [ヘッダーの作成](#作成)
+	- [メインスライダーの作成 - bxslider](#作成-bxslider)
+	- [セクションの作成「私たちのミッション」](#作成私)
+	- [Bootstrap 4 のブレークポイントに合わせたメディアクエリ例](#bootstrap-4-合例)
+	- [セクションの作成「サービス」](#作成)
+	- [セクションの作成「スタッフ紹介」](#作成紹介)
+	- [セクションの作成「飼い主様の声」](#作成飼主様声)
+		- [お客様の声ブロックのレイアウト・装飾](#客様声装飾)
+		- [引用部分レイアウト・装飾](#引用部分装飾)
+		- [引用下部にフェード効果をつける](#引用下部効果)
+		- [背景画像指定](#背景画像指定)
+	- [フッターの作成](#作成)
+		- [基本構造](#基本構造)
+		- [スタイル](#)
+	- [ナビゲーションとスクロール位置の連動 - Scrollspy](#位置連動-scrollspy)
+
+<!-- /TOC -->
 
 テキストファイル
 [Bootstrap 4 - ペットクリニック用テキスト](https://github.com/ipgotanda/bs4_pet_easy/blob/master/%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88.txt)
@@ -1055,6 +1083,8 @@ index.html
   </div>
 </footer>
 ```
+
+
 
 * `. justify-content-end` はBootstrap のレイアウトレスポンシブユティリティクラス
     [https://v4-alpha.getbootstrap.com/layout/grid/#horizontal-alignmen](https://v4-alpha.getbootstrap.com/layout/grid/#horizontal-alignment)
