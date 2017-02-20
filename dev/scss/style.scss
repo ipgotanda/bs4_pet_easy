@@ -245,3 +245,24 @@ body {
  }
 
 // フッター
+.site-footer {
+  background-color: #586d74;
+  color: #fff;
+  font-size: .9rem;
+  padding: 1.5rem 0;
+
+  a {
+    color: #e0e6ae;
+  }
+  .phone {
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #e0e6ae;
+  }
+}
+
+.nav-site-sitefooter {
+  .nav-link {
+    text-decoration: underline;
+  }
+}

@@ -1,11 +1,8 @@
 # Bootstrap4 - ペットクリニック【簡易版】
 
-Advanced版はこちらをご覧ください
-[Bootstrap4 - ペットクリニック](https://quip.com/AimHAQoH8OY6)
-
 
 テキストファイル
-[Bootstrap 4 - ペットクリニック用テキスト](https://quip.com/NaPZAaZD860I)
+[Bootstrap 4 - ペットクリニック用テキスト](https://github.com/ipgotanda/bs4_pet_easy/blob/master/%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88.txt)
 * * *
 
 ## Bootstrapの準備
@@ -1032,8 +1029,66 @@ dev/scss/style.scss
 
 ## フッターの作成
 
-coming soon...
-* * *
+
+### 基本構造
+
+index.html
+
+```
+<footer class="site-footer">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-6">
+        <p>フリーダイヤル <span class="site-footer-phone">0120-333-906</span>
+        </p>
+        <p>
+          <small>&copy; 2017 <a href="#">Wisdom Pet Clinic</a>. All rights reserved.</small>
+        </p>
+      </div>
+      <div class="col-md-6">
+        <nav class="nav justify-content-end nav-site-sitefooter">
+          <a class="nav-link" href="#">利用規約</a>
+          <a class="nav-link" href="#">プライバシーポリシー</a>
+        </nav>
+      </div>
+    </div>
+  </div>
+</footer>
+```
+
+* `. justify-content-end` はBootstrap のレイアウトレスポンシブユティリティクラス
+    [https://v4-alpha.getbootstrap.com/layout/grid/#horizontal-alignmen](https://v4-alpha.getbootstrap.com/layout/grid/#horizontal-alignment)
+
+### スタイル
+
+dev/scss/style.scss
+
+```
+// フッター
+.site-footer {
+  background-color: #586d74;
+  color: #fff;
+  font-size: .9rem;
+  padding: 1.5rem 0;
+
+  a {
+    color: #e0e6ae;
+  }
+  .phone {
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #e0e6ae;
+  }
+}
+
+.nav-site-sitefooter {
+  .nav-link {
+    text-decoration: underline;
+  }
+}
+```
+
+
 
 ## ナビゲーションとスクロール位置の連動 - Scrollspy
 

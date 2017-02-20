@@ -77,3 +77,11 @@ body { background: #eee; font-family: helvetica, arial, 'hiragino kaku gothic pr
 .voice-03 { background-image: url(../img/testimonial_03.jpg); }
 
 .voice-04 { background-image: url(../img/testimonial_04.jpg); }
+
+.site-footer { background-color: #586d74; color: #fff; font-size: .9rem; padding: 1.5rem 0; }
+
+.site-footer a { color: #e0e6ae; }
+
+.site-footer .phone { font-size: 1.4em; font-weight: bold; color: #e0e6ae; }
+
+.nav-site-sitefooter .nav-link { text-decoration: underline; }
