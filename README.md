@@ -1,33 +1,34 @@
 # Bootstrap4 - ペットクリニック【簡易版】
 
-<!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
-- [Bootstrap4 - ペットクリニック【簡易版】](#bootstrap4-簡易版)
-	- [Bootstrapの準備](#bootstrap準備)
-		- [Boostrap 4 のQuick Start を使用する場合](#boostrap-4-quick-start-使用場合)
-		- [Starter Templateを使用する場合](#starter-template使用場合)
-	- [gulpによるSass構築環境設定](#gulpsass構築環境設定)
-	- [Browser-sync(ブラウザ自動更新)の準備(オプショナル)](#browser-sync自動更新準備)
-	- [**Sass環境**](#sass環境)
-	- [Bootstrapの基本レイアウト - グリッドレイアウト](#bootstrap基本-)
-		- [Bootstrapのカラムとブレークポイントを理解する](#bootstrap理解)
-	- [ヘッダーの作成](#作成)
-	- [メインスライダーの作成 - bxslider](#作成-bxslider)
-	- [セクションの作成「私たちのミッション」](#作成私)
-	- [Bootstrap 4 のブレークポイントに合わせたメディアクエリ例](#bootstrap-4-合例)
-	- [セクションの作成「サービス」](#作成)
-	- [セクションの作成「スタッフ紹介」](#作成紹介)
-	- [セクションの作成「飼い主様の声」](#作成飼主様声)
-		- [お客様の声ブロックのレイアウト・装飾](#客様声装飾)
-		- [引用部分レイアウト・装飾](#引用部分装飾)
-		- [引用下部にフェード効果をつける](#引用下部効果)
-		- [背景画像指定](#背景画像指定)
-	- [フッターの作成](#作成)
-		- [基本構造](#基本構造)
-		- [スタイル](#)
-	- [ナビゲーションとスクロール位置の連動 - Scrollspy](#位置連動-scrollspy)
 
-<!-- /TOC -->
+- [Bootstrapの準備](#bootstrap%E3%81%AE%E6%BA%96%E5%82%99)
+  - [Boostrap 4 のQuick Start を使用する場合](#boostrap-4-%E3%81%AEquick-start-%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%99%E3%82%8B%E5%A0%B4%E5%90%88)
+  - [Starter Templateを使用する場合](#starter-template%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%99%E3%82%8B%E5%A0%B4%E5%90%88)
+- [gulpによるSass構築環境設定](#gulp%E3%81%AB%E3%82%88%E3%82%8Bsass%E6%A7%8B%E7%AF%89%E7%92%B0%E5%A2%83%E8%A8%AD%E5%AE%9A)
+- [Browser-sync(ブラウザ自動更新)の準備(オプショナル)](#browser-sync%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6%E8%87%AA%E5%8B%95%E6%9B%B4%E6%96%B0%E3%81%AE%E6%BA%96%E5%82%99%E3%82%AA%E3%83%97%E3%82%B7%E3%83%A7%E3%83%8A%E3%83%AB)
+- [**Sass環境**](#sass%E7%92%B0%E5%A2%83)
+- [Bootstrapの基本レイアウト - グリッドレイアウト](#bootstrap%E3%81%AE%E5%9F%BA%E6%9C%AC%E3%83%AC%E3%82%A4%E3%82%A2%E3%82%A6%E3%83%88---%E3%82%B0%E3%83%AA%E3%83%83%E3%83%89%E3%83%AC%E3%82%A4%E3%82%A2%E3%82%A6%E3%83%88)
+  - [Bootstrapのカラムとブレークポイントを理解する](#bootstrap%E3%81%AE%E3%82%AB%E3%83%A9%E3%83%A0%E3%81%A8%E3%83%96%E3%83%AC%E3%83%BC%E3%82%AF%E3%83%9D%E3%82%A4%E3%83%B3%E3%83%88%E3%82%92%E7%90%86%E8%A7%A3%E3%81%99%E3%82%8B)
+- [ヘッダーの作成](#%E3%83%98%E3%83%83%E3%83%80%E3%83%BC%E3%81%AE%E4%BD%9C%E6%88%90)
+- [メインスライダーの作成 - bxslider](#%E3%83%A1%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%A9%E3%82%A4%E3%83%80%E3%83%BC%E3%81%AE%E4%BD%9C%E6%88%90---bxslider)
+- [セクションの作成「私たちのミッション」](#%E3%82%BB%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3%E3%81%AE%E4%BD%9C%E6%88%90%E7%A7%81%E3%81%9F%E3%81%A1%E3%81%AE%E3%83%9F%E3%83%83%E3%82%B7%E3%83%A7%E3%83%B3)
+- [Bootstrap 4 のブレークポイントに合わせたメディアクエリ例](#bootstrap-4-%E3%81%AE%E3%83%96%E3%83%AC%E3%83%BC%E3%82%AF%E3%83%9D%E3%82%A4%E3%83%B3%E3%83%88%E3%81%AB%E5%90%88%E3%82%8F%E3%81%9B%E3%81%9F%E3%83%A1%E3%83%87%E3%82%A3%E3%82%A2%E3%82%AF%E3%82%A8%E3%83%AA%E4%BE%8B)
+- [セクションの作成「サービス」](#%E3%82%BB%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3%E3%81%AE%E4%BD%9C%E6%88%90%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9)
+- [セクションの作成「スタッフ紹介」](#%E3%82%BB%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3%E3%81%AE%E4%BD%9C%E6%88%90%E3%82%B9%E3%82%BF%E3%83%83%E3%83%95%E7%B4%B9%E4%BB%8B)
+- [セクションの作成「飼い主様の声」](#%E3%82%BB%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3%E3%81%AE%E4%BD%9C%E6%88%90%E9%A3%BC%E3%81%84%E4%B8%BB%E6%A7%98%E3%81%AE%E5%A3%B0)
+  - [お客様の声ブロックのレイアウト・装飾](#%E3%81%8A%E5%AE%A2%E6%A7%98%E3%81%AE%E5%A3%B0%E3%83%96%E3%83%AD%E3%83%83%E3%82%AF%E3%81%AE%E3%83%AC%E3%82%A4%E3%82%A2%E3%82%A6%E3%83%88%E3%83%BB%E8%A3%85%E9%A3%BE)
+  - [引用部分レイアウト・装飾](#%E5%BC%95%E7%94%A8%E9%83%A8%E5%88%86%E3%83%AC%E3%82%A4%E3%82%A2%E3%82%A6%E3%83%88%E3%83%BB%E8%A3%85%E9%A3%BE)
+  - [引用下部にフェード効果をつける](#%E5%BC%95%E7%94%A8%E4%B8%8B%E9%83%A8%E3%81%AB%E3%83%95%E3%82%A7%E3%83%BC%E3%83%89%E5%8A%B9%E6%9E%9C%E3%82%92%E3%81%A4%E3%81%91%E3%82%8B)
+  - [背景画像指定](#%E8%83%8C%E6%99%AF%E7%94%BB%E5%83%8F%E6%8C%87%E5%AE%9A)
+- [フッターの作成](#%E3%83%95%E3%83%83%E3%82%BF%E3%83%BC%E3%81%AE%E4%BD%9C%E6%88%90)
+  - [基本構造](#%E5%9F%BA%E6%9C%AC%E6%A7%8B%E9%80%A0)
+  - [スタイル](#%E3%82%B9%E3%82%BF%E3%82%A4%E3%83%AB)
+- [ナビゲーションとスクロール位置の連動 - Scrollspy](#%E3%83%8A%E3%83%93%E3%82%B2%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%81%A8%E3%82%B9%E3%82%AF%E3%83%AD%E3%83%BC%E3%83%AB%E4%BD%8D%E7%BD%AE%E3%81%AE%E9%80%A3%E5%8B%95---scrollspy)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 テキストファイル
 [Bootstrap 4 - ペットクリニック用テキスト](https://github.com/ipgotanda/bs4_pet_easy/blob/master/%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88.txt)
