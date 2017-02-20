@@ -388,7 +388,9 @@ index.html
 index.html
 
 ```html
+
 <span class="navbar-toggler-icon"><i class="ion-navicon"></i></span>
+
 ```
 
 
@@ -396,6 +398,7 @@ index.html
 dev/scss/style.scss
 
 ```scss
+
  .navbar-toggler {
    border-color: #fff;
    background-color: rgba(white, .2);
@@ -406,6 +409,7 @@ dev/scss/style.scss
       font-size: 30px;
    }
  }
+
 ```
 
 * アイコンサイズは font-size で調整する
@@ -1063,7 +1067,7 @@ dev/scss/style.scss
 
 index.html
 
-```
+```html
 <footer class="site-footer">
   <div class="container-fluid">
     <div class="row">
@@ -1096,7 +1100,7 @@ index.html
 
 dev/scss/style.scss
 
-```
+```scss
 // フッター
 .site-footer {
   background-color: #586d74;
@@ -1107,14 +1111,15 @@ dev/scss/style.scss
   a {
     color: #e0e6ae;
   }
-  .phone {
-    font-size: 1.4em;
-    font-weight: bold;
-    color: #e0e6ae;
-  }
 }
 
-.nav-site-sitefooter {
+.site-footer-phone {
+  font-size: 1.4em;
+  font-weight: bold;
+  color: #e0e6ae;
+}
+
+.nav-site-footer {
   .nav-link {
     text-decoration: underline;
   }
@@ -1125,4 +1130,160 @@ dev/scss/style.scss
 
 ## ナビゲーションとスクロール位置の連動 - Scrollspy
 
-coming soon...
+ScrollspyとはBootstrapの機能の1つで、ナビゲーションのページ内リンクとリンク先のセクションを連動させます。
+
+ページをスクロールしていき、そのセクションがブラウザの表示領域内に入ると、ナビゲーションのリンク部分がアクティブ化するというもの。
+
+Scrollspy サンプルページ
+http://v4-alpha.getbootstrap.com/components/scrollspy/
+
+ナビゲーションはマストではないが、Bootstrapコンポーネントである .navbar を利用すると良い
+http://v4-alpha.getbootstrap.com/components/navbar/
+
+
+
+基本スタイルの設定
+```scss
+body {
+  position: relative;
+}
+```
+
+
+HTMLの設定
+
+index.html
+
+```html
+<header class="site-header">
+  <nav class="navbar navbar-toggleable-md navbar-header" id="nav-header">
+  ...略...
+```
+
+* .navbar に #nav-header を追加
+
+Javascriptの設定
+
+今回はscrollspy用のスクリプトファイルを用意します。
+
+assets/js/scrollspy.js
+
+```js
+$('body').scrollspy({ target: '#nav-header' })
+```
+
+* target : には先程HTMLで追加したIDを指定
+
+
+要素の検証等でナビゲーションの .nav-link に .active が追加、削除することを確認する
+
+![scrollspy activeクラス](http://i.imgur.com/WXeCCTA.png)
+
+
+.active のスタイリング
+
+```scss
+.navbar-header{
+   .nav-link {
+     color: #fff;
+
+     &.active {
+       box-shadow: 0 5px 0 0 #fff;
+     }
+   }
+ }
+```
+
+* .active には box-shadow で下線を付ける
+
+
+### `.active` のスタイリング
+``` scss
+.navbar-header{
+   .nav-link {
+     color: #fff;
+
+     &.active {
+       box-shadow: 0 5px 0 0 #fff;
+     }
+   }
+ }
+ ```
+
+* .active には box-shadow で下線を付ける
+
+### サイトヘッダーを固定し、ナビゲーションの伸縮アニメーションを追加する
+
+dev/scss/style.scss
+```scss
+.site-header {
+  position: fixed;
+  z-index: 10000;
+  width: 100%;
+}
+
+.navbar-header {
+  background: rgba($color-primary, .8);
+
+  max-height: 120px; //transition用
+  transition: max-height 1s;
+
+  // HERO以外にスクロールした時
+  .is-scrolled & {
+    max-height: 60px;
+  }
+} //.navbar-header
+```
+
+### ロゴにも伸縮アニメーションを追加する
+
+dev/scss/style.scss
+
+```scss
+.site-logo {
+  margin: 0;
+
+  img {
+    max-height: 60px;
+    transition: max-height 1s;
+  }
+
+  @media (max-width: 767px) {
+    img {
+      max-height: 40px;
+    }
+  }
+
+  // HERO以外にスクロールした時
+  .is-scrolled & {
+    img {
+      max-height: 40px;
+    }
+  }
+
+}
+```
+
+### Scrollspy用のJSを設定する
+
+assets/js/scrollspy.js
+```js
+ // .active クラスの取得
+ var navToggler = function(){
+   // リンクの href の値(ページ内リンクID)を取得
+   var _hash = $('#nav-header a.active').attr('href');
+    
+   // #sect-hero以外の場合は 
+   // .site-headerに .is-scrolled クラスを追加する
+   $('.site-header').toggleClass('is-scrolled', ( _hash != '#sect-hero'));
+ };
+
+ // 初期位置取得
+ navToggler();
+
+ // スクロールイベント(Scrollspy)
+ $(window).on('activate.bs.scrollspy', function(){
+   navToggler();
+ });
+```
+結果を確認する。

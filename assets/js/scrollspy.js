@@ -1,7 +1,7 @@
 // Scroll-spy
  $('body').scrollspy({
    target: '#nav-header', // スクロールスパイ対象ナビゲーション
-   offset: 50 //切り替えポイントオフセット(ヘッダーの高さ)
+   offset: 60 //切り替えポイントオフセット(ヘッダーの高さ)
  });
 
  // .active クラスの取得
@@ -11,7 +11,7 @@
    var _hash = $('#nav-header a.active').attr('href');
 
    // class付け替え作業
-   $('#site-header').toggleClass('is-scrolled', ( _hash != '#section-hero'));
+   $('.site-header').toggleClass('is-scrolled', ( _hash != '#sect-hero'));
  };
 
  // 初期位置取得
