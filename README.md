@@ -1187,22 +1187,6 @@ $('body').scrollspy({ target: '#nav-header' })
 ![scrollspy activeクラス](http://i.imgur.com/WXeCCTA.png)
 
 
-.active のスタイリング
-
-```scss
-.navbar-header{
-   .nav-link {
-     color: #fff;
-
-     &.active {
-       box-shadow: 0 5px 0 0 #fff;
-     }
-   }
- }
-```
-
-* .active には box-shadow で下線を付ける
-
 
 ### `.active` のスタイリング
 ``` scss
