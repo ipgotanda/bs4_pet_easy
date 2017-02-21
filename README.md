@@ -1176,15 +1176,20 @@ Javascriptの設定
 assets/js/scrollspy.js
 
 ```js
-$('body').scrollspy({ target: '#nav-header' })
+$('body').scrollspy({
+   target: '#nav-header',
+   offset: 60
+ });
 ```
 
-* target : には先程HTMLで追加したIDを指定
+* `target:` には先程HTMLで追加したIDを指定
+* `offset:` にはヘッダーの高さを指定。ナビがアクティブになるタイミングがウィンドウ上部より60px手前になる。
 
-
-要素の検証等でナビゲーションの .nav-link に .active が追加、削除することを確認する
+要素の検証等でナビゲーションの `.nav-link` に `.active` が追加、削除することを確認する
 
 ![scrollspy activeクラス](http://i.imgur.com/WXeCCTA.png)
+
+
 
 
 
@@ -1205,59 +1210,58 @@ $('body').scrollspy({ target: '#nav-header' })
 
 ### サイトヘッダーを固定し、ナビゲーションの伸縮アニメーションを追加する
 
+![ヘッダーアニメーション](http://i.imgur.com/4QomVkJ.gif)
+
+ヘッダーの固定化
+
 dev/scss/style.scss
+
 ```scss
 .site-header {
   position: fixed;
   z-index: 10000;
   width: 100%;
 }
-
-.navbar-header {
-  background: rgba($color-primary, .8);
-
-  max-height: 120px; //transition用
-  transition: max-height 1s;
-
-  // HERO以外にスクロールした時
-  .is-scrolled & {
-    max-height: 60px;
-  }
-} //.navbar-header
 ```
 
-### ロゴにも伸縮アニメーションを追加する
+* `z-index: 10000` は保険のため
+
+
+伸縮アニメーション
 
 dev/scss/style.scss
 
 ```scss
-.site-logo {
-  margin: 0;
+.navbar-header {
+  background: rgba($color-primary, .8);
 
-  img {
-    max-height: 60px;
+  @media (min-width: 992px) {
+    max-height: 120px; //transition用
     transition: max-height 1s;
-  }
 
-  @media (max-width: 767px) {
-    img {
-      max-height: 40px;
+    // HERO以外にスクロールした時
+    .is-scrolled & {
+      max-height: 60px;
     }
   }
-
-  // HERO以外にスクロールした時
-  .is-scrolled & {
-    img {
-      max-height: 40px;
-    }
-  }
-
-}
+  
+} //.navbar-header
 ```
 
-###  Scrollspy用のJSを設定する
+* メディアクエリで lg サイズ以上という条件でアニメーションを設定にする( `@media(min-width: 992px)` )。なぜなら` max-height: 120px `はアコーディオン化したナビゲーションには不必要なため。逆に `max-height` があると表示が崩れる。
+* `.is-scrolled` は次のステップで `.site-header` に追加されるクラス
+
+
+**【ポイント】**
+この is-scrolled というクラスをヘッダーへ追加・削除することで、ヘッダー内各パーツのスタイルを変化させる。その変化の過程を transition プロパティを使ってアニメーション化する。
+
+
+### Scrollspyのイベントを使用し、ヘッダーの高さをアニメーションさせる
+
+ここではHEROセクション（Home）以外に画面をスクロールした際にヘッダーの高さを縮める。HEROセクションに戻った際にはまたヘッダーの高さをもとに戻すというアニメーションを完成させていく。
 
 assets/js/scrollspy.js
+
 ```js
  // .active クラスの取得
  var navToggler = function(){
@@ -1277,18 +1281,61 @@ assets/js/scrollspy.js
    navToggler();
  });
 ```
-結果を確認する。
 
----
+* `navToggler` 関数は現在アクティブ化しているナビゲーションリンクを検知し、サイトヘッダー(.site-header)へ `.is-scrolled` の追加・削除を行う。
+* `$(window).on('activate.bs.scrollspy', function(){...` はセクションが切り替わる際にイベントが発生するので、その度に実行させたい処理を function 内に記述する。この場合は `navToggler` を実行。
+
+
+
+
+### ロゴにも伸縮アニメーションを追加する
+
+dev/scss/style.scss
+
+```scss
+.site-logo {
+  margin: 0;
+  font-size: 1rem;
+
+  img {
+    max-height: 60px;
+    transition: max-height 1s;
+  }
+
+  @media (max-width: 767px) {
+    img {
+      max-height: 40px;
+    }
+  }
+
+  // HERO以外にスクロールした時
+  @media (min-width: 768px) { 
+    .is-scrolled & {
+      img {
+        max-height: 40px;
+      }
+    }
+  }
+
+}
+```
+
+* `.site-logo` の `font-size: 1rem` はBootstrap によって `h1` に `2.5rem` というフォントサイズの設定をオーバーライドしている。余白が空くのを防止する。
+* md サイズ以下ではロゴの最大高を 40px とする。
+* ロゴは md サイズ以降で、HERO以外に移動した場合、最大高を 40px とする。
+
+
+* * *
 
 ## スムーススクロールを実装する
 
-スクリプトは以下を参考にする。
+スクリプトは次のサイトをベースにする。
 http://goo.gl/WhTHd5
 
 同じページのページ内リンクに反応する、「#」だけのリンクは除外する等の細かい処理が施されています。
 
 assets/js/script.js
+
 ```js
 var topoffset = 60;
 
@@ -1308,5 +1355,6 @@ $('.navbar a[href*=\\#]:not([href=\\#])').click(function() {
   } //click function
 }); //smooth scrolling
 ```
+
 * オリジナルのJSから少し手直しを加えてあるので上記をコピーすること
-* `var topoffset = 60` は ヘッダーの高さ
+* `var topoffset = 60` は ヘッダーの高さ。移動する際にヘッダーの高さを差し引く。
